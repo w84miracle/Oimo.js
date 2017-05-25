@@ -10,7 +10,8 @@ function demo() {
     console.log( ground.name )
 
     decal = new THREE.Vector3(0,1,0);
-    paddle = add({ type:'box', size:[2, 2, 2], pos:[0,1,0], density:1, move:true, kinematic:true, material:'kinematic' });
+    //paddle = add({ type:'box', size:[2, 2, 2], pos:[0,1,0], density:1, move:true, kinematic:true, material:'kinematic' });
+    paddle = add({ type:'cylinder', size:[1,0.5], pos:[0,0.25,0], density:1, move:true, kinematic:true, material:'kinematic' });
     //paddle = world.add( o );
     //mpaddle =  view.add( o );
 
@@ -25,8 +26,8 @@ function demo() {
         d = Math.rand(1,3);
         x = Math.rand(-10,10);
         z = Math.rand(-10,10);
-
-        add( { type:'box', size:[w,h,d], pos:[x,h*0.5,z], move:true } );
+		add ({ type:'cylinder', size:[1,0.5], pos:[x,0.25,z], friction:1, move:true});
+        //add( { type:'box', size:[w,h,d], pos:[x,h*0.5,z], move:true } );
 
     }
 
